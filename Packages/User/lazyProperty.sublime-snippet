@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+${1:public} ${2:type} ${3:propertyName} {
+    get { 
+    	if(${3} == null) ${3} = ${4:fillLazyProperty}; 
+    	return ${3}; 
+	}
+    ${5:private} set;
+} 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>lazyProperty</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

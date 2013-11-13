@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+List<ID> ${1:relatedObjectIDs} = new List<ID>();
+for(${2:parentObjectType} ${3:parentObjectIterationVariable} : ${4:parentObjectList}) {
+    ${1}.add(${3}.${5:relatedObjectLookupField});
+}
+
+Map<ID,${6:RelatedObjectType}> ${6}Map = new Map<ID,${6}>(
+    	(List<${6}>)QueryUtil.Query(
+				'SELECT * ' + 
+				'FROM ${6} ' +
+				(${1} == null || ${1}.size() == 0 ?
+		            'WHERE   ID = null '
+		            :
+		            'WHERE   ID IN (\'' + String.join( ${1} ,'\',\'' ) + '\')'
+				)
+			)
+	);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>relatedObjectMapQuery</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

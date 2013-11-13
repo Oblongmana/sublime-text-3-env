@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+@IsTest
+static void test${1:FunctionalityBeingTested}() {
+    
+    Test.setCurrentPageReference(Page.${2:PageForControllerExtension});
+    
+    // Add parameters to page URL
+    ApexPages.currentPage().getParameters().put('${3:param}', '${4:value}');
+    
+    //Instantiate standard controller
+    ${5:SObject} ${6:standardObjectName} = new ${5}(); 
+    ApexPages.StandardController stdCtrlr = new ApexPages.standardController(${5});
+    
+    // Instantiate a new controller ext
+    ${7:ControllerName} controllerExt = new ${7}(stdCtrlr); 
+    
+    // Get a redir result, make sure it's not null, and check it's the expected page
+    PageReference resultPR = controllerExt.${8:redirectMethod()};
+    System.assertNotEquals(null, resultPR, 'PageReference returned as a result of call to ${7}.${8}');
+    System.assertEquals('/apex/${9:expectedPage}'.toLowerCase(),resultPR.getURL().toLowerCase(), 'PageReference returned as a result of call to ${7}.${8}');
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>controllerExtTest</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

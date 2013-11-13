@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+<apex:pageBlockSectionItem ${1:helpText="{!\$ObjectType.ObjectAPIName.Fields.FieldName.inlineHelpText\}"}>
+    <apex:outputLabel value="${2:Label Text}" for="${3:htmlIDForElement}"/>
+    <apex:${4:inputField} value="{!${5:ControllerProperty}.${6:Field__c}}" id="${3}" required="${7:true}"/>
+</apex:pageBlockSectionItem>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pageBlockSectionItem</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

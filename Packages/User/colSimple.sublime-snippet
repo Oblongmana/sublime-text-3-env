@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+<apex:column value="\{!${1:IterationVar}.${2:FieldName}\}"/>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>colSimple</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,7 @@
+[
+    //Alias Git: Quick Add to Git: Add for SPEEEEEEED
+    {
+        "caption": "Git: Add",
+        "command": "git_quick_add"
+    }
+]

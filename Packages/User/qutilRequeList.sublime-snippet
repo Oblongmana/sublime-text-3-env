@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+${1:SObjectInstanceList} = QueryUtil.Query (
+        'SELECT  * ' +
+        'FROM    ${2:SObject} ' + 
+        (${1} == null || ${1}.size() == 0 ?
+            'WHERE   ID = null '
+            :
+            'WHERE   ID IN (\'' +
+                    String.join( new List<ID>((new Map<ID,${2}>(${1})).keySet()),'\',\'' ) + 
+                '\')'
+        )
+    );
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>qutilRequList</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

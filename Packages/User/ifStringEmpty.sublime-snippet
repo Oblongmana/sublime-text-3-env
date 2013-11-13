@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+if (${1:theString} == null || ${1}.equals('') || ${1}.trim().length() == 0) {
+    ${2}
+}
+else {
+    ${3}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ifStringEmpty</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

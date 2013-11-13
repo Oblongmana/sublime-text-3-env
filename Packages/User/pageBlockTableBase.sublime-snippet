@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+<apex:pageBlockTable value="\{!${1:ControllerVar}\}" var="${2:IterationVar}">
+    ${0}
+</apex:pageBlockTable>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>pageBlockTableBase</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.${1:SeverityLevel}, '${2:Message}'));
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pageMessage</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

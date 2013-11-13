@@ -1,0 +1,5 @@
+<snippet>
+	<content><![CDATA[List<${1:SObject}> ${2:SObjectListVarName} = (List<${1}>)QueryUtil.query('SELECT * FROM ${1:SObject} ');]]></content>
+	<tabTrigger>qutil</tabTrigger>
+	<description>Quick QueryUtil Query</description>
+</snippet>

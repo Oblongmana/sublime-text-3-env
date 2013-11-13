@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+
+static ${1:ControllerName} setupController(Map<String,String> pageParams) {
+	Test.setCurrentPageReference(Page.${2:PageForController});
+	if(pageParams != null) {
+		for(String param : pageParams.keySet()) {
+    		ApexPages.currentPage().getParameters().put(param, pageParams.get(param));
+		}
+	}
+    return new ${1}(); 
+}
+
+@IsTest
+static void test${3:Functionality1BeingTested}() {
+    // Get a redir result, make sure it's not null, and check it's the expected page
+    PageReference resultPR = setupController(null).${4:redirectMethod()};
+    System.assertNotEquals(null, resultPR, 'PageReference returned as a result of call to ${1}.${4}');
+    System.assertEquals('/apex/${5:ExpectedPageName}'.toLowerCase(),resultPR.getURL().toLowerCase(), 'PageReference returned as a result of call to ${1}.${4}');
+}
+
+@IsTest
+static void test${6:Functionality2BeingTested}() {
+    // Get a redir result, make sure it's not null, and check it's the expected page
+    PageReference resultPR = setupController(null).${7:redirectMethod()};
+    System.assertNotEquals(null, resultPR, 'PageReference returned as a result of call to ${1}.${7}');
+    System.assertEquals('/apex/${8:ExpectedPageName}'.toLowerCase(),resultPR.getURL().toLowerCase(), 'PageReference returned as a result of call to ${1}.${7}');
+}
+
+@IsTest
+static void test${9:Functionality3BeingTested}() {
+    // Get a redir result, make sure it's not null, and check it's the expected page
+    PageReference resultPR = setupController(null).${10:redirectMethod()};
+    System.assertNotEquals(null, resultPR, 'PageReference returned as a result of call to ${1}.${10}');
+    System.assertEquals('/apex/${11:ExpectedPageName}'.toLowerCase(),resultPR.getURL().toLowerCase(), 'PageReference returned as a result of call to ${1}.${10}');
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>controllerMultiTest</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
